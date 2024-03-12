@@ -4,13 +4,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from config import api_domain
 
 
 class CostTableTest(unittest.TestCase):
     def setUp(self):
         # Инициализация драйвера (в этом примере используется Chrome)
         self.driver = webdriver.Chrome()
-        self.driver.get("http://127.0.0.1:8000/cost_table/")
+        self.driver.get(f"{api_domain}/cost_table/")
 
     def test_select_category(self):
         driver = self.driver
