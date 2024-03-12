@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+from config import api_domain
 
 
 def test_filter_by_category():
@@ -21,7 +22,7 @@ def test_filter_by_category():
 
     try:
         # Шаг 1: Открытие страницы
-        driver.get("http://127.0.0.1:8000/cost_table/")
+        driver.get(f"{api_domain}/cost_table/")
         print("Страница открыта")
 
         # Ожидание элемента выпадающего списка
