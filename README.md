@@ -1,6 +1,6 @@
 # Bookstore-autotests
 
-Тест 1 - проверка фильтра:
+Тест 1 - [проверка фильтра](tests/test_cost_table.py):
 
 Шаги:
 1. Зайти на странице http://127.0.0.1:8000/cost_table/
