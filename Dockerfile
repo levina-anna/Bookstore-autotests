@@ -19,8 +19,9 @@ RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.d
 
 # Установка ChromeDriver
 RUN wget https://storage.googleapis.com/chrome-for-testing-public/122.0.6261.128/linux64/chromedriver-linux64.zip \
-    && unzip chromedriver-linux64.zip -d /usr/local/bin/ \
-    && chmod +x /usr/local/bin/chromedriver-linux64 \
+    && unzip chromedriver-linux64.zip \
+    && mv chromedriver-linux64/chromedriver /usr/local/bin/ \
+    && chmod +x /usr/local/bin/chromedriver \
     && rm chromedriver-linux64.zip
 
 # Установка Python зависимостей
@@ -31,10 +32,11 @@ RUN pip3 install --no-cache-dir -r /tmp/requirements.txt
 # Копируем директорию с тестами в контейнер
 COPY tests /tests
 
-# Копируем файо окружения в контейнер
+# Копируем файл окружения в контейнер
 COPY .env /
 
 WORKDIR /tests
 
 # Запуск тестов с pytest
-CMD ["pytest", "-s"]
+CMD pytest -s /tests/test_cost_table.py
+
