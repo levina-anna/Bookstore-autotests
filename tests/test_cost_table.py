@@ -18,11 +18,11 @@ def test_filter_by_category():
     driver = webdriver.Chrome(options=chrome_options)
 
     try:
-        # Шаг 1: Открытие страницы
+        # Открываем страницу
         driver.get(f"{api_domain}/cost_table/")
         print("Страница открыта")
 
-        # Ожидание элемента выпадающего списка
+        # Ожидаем элемент выпадающего списка
         WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located((By.ID, "category"))
         )
@@ -32,19 +32,16 @@ def test_filter_by_category():
         category_select.select_by_visible_text("Novels")
         print("Категория 'Novels' выбрана")
 
-        # Нажатие на кнопку "Применить"
+        # Нажимаем на кнопку "Применить"
         apply_button = driver.find_element(By.XPATH, "//button[text()='Apply']")
         apply_button.click()
         print("Кнопка 'Применить' нажата")
 
-        # Ожидание отображения таблицы с книгами
+        # Ожидаем отображения таблицы с книгами
         WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located((By.TAG_NAME, "tbody"))
         )
         print("Таблица с книгами отобразилась")
-
-        # Здесь можно добавить дополнительные проверки и выводить результаты в консоль
-        # Например, получить и распечатать названия книг из таблицы
 
     finally:
         driver.quit()

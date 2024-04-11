@@ -25,7 +25,6 @@ RUN wget https://storage.googleapis.com/chrome-for-testing-public/122.0.6261.128
     && rm chromedriver-linux64.zip
 
 # Установка Python зависимостей
-# Предполагается, что у вас есть файл requirements.txt с зависимостями проекта
 COPY requirements.txt /tmp/
 RUN pip3 install --no-cache-dir -r /tmp/requirements.txt
 
