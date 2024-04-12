@@ -1,9 +1,27 @@
 # Bookstore-autotests
 
-Тест 1 - [проверка фильтра](tests/test_cost_table.py):
+This project contains automated tests for the Bookstore application. It's designed to validate the functionality of the Bookstore's web interface.
 
-Шаги:
-1. Зайти на странице http://127.0.0.1:8000/cost_table/
-2. Выбрать категорию "Романы"
-3. Нажать на кнопку "Применить"
-4. Если в таблице отобразить книги, которые действительно относятся к категории "Романы", значит тест пройден
+## Features
+- Emulates user actions within the browser.
+
+## Running the Tests
+```shell
+pip install -r requirements.txt
+pytest -s tests/test_cost_table.py
+```
+
+## Running on a Server
+```shell
+docker build -t bookstore-autotests .
+docker run --rm bookstore-autotests
+```
+
+## Configuration
+The test scripts are configured to run against the Bookstore application deployed at http://127.0.0.1:8000. To change the test environment, update the DOMAIN variable in the .env file (note that .env is included in .gitignore to prevent sensitive information from being committed to version control).
+
+## Technologies Used
+- Python 3
+- Selenium WebDriver
+- Pytest
+- Docker

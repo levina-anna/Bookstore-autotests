@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from config import api_domain
+from config import domain
 
 
 def test_filter_by_category():
@@ -19,7 +19,7 @@ def test_filter_by_category():
 
     try:
         # 1. Зайти на страницу /cost_table/
-        driver.get(f"{api_domain}/cost_table/")
+        driver.get(f"{domain}/cost_table/")
         print("Страница открыта")
 
         # Ожидаем элемент выпадающего списка
