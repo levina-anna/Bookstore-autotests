@@ -9,7 +9,7 @@ This project contains automated tests for the Bookstore application. It's design
 ## Running the Tests
 ```shell
 pip install -r requirements.txt
-pytest -s tests/test_cost_table.py
+pytest -s tests/
 ```
 
 ## Running on a Server
