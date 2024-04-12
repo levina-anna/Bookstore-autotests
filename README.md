@@ -4,6 +4,7 @@ This project contains automated tests for the Bookstore application. It's design
 
 ## Features
 - Emulates user actions within the browser.
+- Tests the functionality of category filters in the web application.
 
 ## Running the Tests
 ```shell
