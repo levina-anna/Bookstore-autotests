@@ -19,7 +19,9 @@ docker run --rm bookstore-autotests
 ```
 
 ## Configuration
-The test scripts are configured to run against the Bookstore application deployed at http://127.0.0.1:8000. To change the test environment, update the DOMAIN variable in the .env file (note that .env is included in .gitignore to prevent sensitive information from being committed to version control).
+The test scripts are configured to run against the Bookstore application deployed at http://127.0.0.1:8000. 
+To change the test environment, update the DOMAIN variable in the .env file 
+(note that .env is included in .gitignore).
 
 ## Technologies Used
 - Python 3
